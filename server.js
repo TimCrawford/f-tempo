@@ -16,10 +16,10 @@ const utils = require('./static/src/utils.js');
 /*******************************************************************************
  * Globals / init
  ******************************************************************************/
-//const MAWS_DB = './data/latest_maws'; 
-const MAWS_DB = './data/latest_maws_corrIDs_30Sep2019.txt'; 
-//const DIAT_MEL_DB = './data/latest_diat_mel_strs'; 
-const DIAT_MEL_DB = './data/latest_diat_mel_strs_corrIDs_30Sep2019.txt'; 
+const MAWS_DB = './data/latest_maws'; 
+//const MAWS_DB = './data/latest_maws_corrIDs_30Sep2019.txt'; 
+const DIAT_MEL_DB = './data/latest_diat_mel_strs'; 
+//const DIAT_MEL_DB = './data/latest_diat_mel_strs_corrIDs_30Sep2019.txt'; 
 const EMO_IDS = []; // all ids in the system
 const EMO_IDS_DIAT_MELS = {}; // keys are ids, values are the diat_int_code for that id
 const EMO_IDS_MAWS = {}; // keys are ids, values are an array of maws for that id
@@ -585,6 +585,7 @@ function load_ngrams_from_diat_mels (ng_len) {
 	}
 	console.log("There are "+Object.keys(NGRAMS_to_IDS).length+" unique "+ng_len+"-grams");
 	
+/*
 	// Write out the two arrays to disk
 	fs.writeFile(NGRAM_ID_BASE+ng_len+".json",
 		JSON.stringify(NGRAMS_to_IDS),
@@ -600,7 +601,7 @@ function load_ngrams_from_diat_mels (ng_len) {
 		  console.log('The id_ngram_dict has been saved!');
 		}
 	);
-	
+*/	
 }
 	
 function load_file(file, data_callback) {
